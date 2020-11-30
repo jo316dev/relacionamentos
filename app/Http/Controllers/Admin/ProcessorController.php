@@ -35,7 +35,7 @@ class ProcessorController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.hardware.processor.create');
     }
 
     /**
@@ -46,7 +46,12 @@ class ProcessorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if(!$this->repository->create($request->all())){
+            return redirect()->back()->with('error', 'Houve um Problema no Cadastro');
+        }
+
+        return redirect()->route('processors.index')
+                        ->with('success', 'Processor cadastrado com sucesso!');
     }
 
     /**
@@ -57,7 +62,7 @@ class ProcessorController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -68,7 +73,11 @@ class ProcessorController extends Controller
      */
     public function edit($id)
     {
-        //
+        if(!$processor = $this->repository->find($id)){
+            return redirect()->back()->with('error', 'Não foi encontrado o cadastro');
+        }
+
+        return view('admin.hardware.processor.edit', compact('processor'));
     }
 
     /**
@@ -80,7 +89,13 @@ class ProcessorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if(!$processor = $this->repository->find($id)){
+            return redirect()->back()->with('error', 'Não foi encontrado o cadastro');
+        }
+
+        $processor->update($request->all());
+
+        return redirect()->route('processors.index')->with('success', 'Marca atualizada com sucesso');
     }
 
     /**
@@ -91,6 +106,12 @@ class ProcessorController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if(!$processor = $this->repository->find($id)){
+            return redirect()->back()->with('error', 'Não foi encontrado o cadastro');
+        }
+
+        $processor->delete();
+
+        return redirect()->route('processors.index')->with('success', 'Item excluido com sucesso!');
     }
 }

@@ -11,7 +11,7 @@
     <div class="card">
         <div class="card-header">
             @include('admin.includes.messages')
-            <a href="{{ route('brands.create') }}" class="btn btn-success">Cadastrar</a>
+            <a href="{{ route('processors.create') }}" class="btn btn-success">Cadastrar</a>
         </div>
         <div class="card-body">
 
@@ -33,8 +33,8 @@
                                 <td>{{ $processor->id }}</td>
                                 <td>{{ $processor->name }}</td>
                                 <td>
-                                    <a href="{{ route('brands.edit', $processor->id) }}" class="btn btn-warning" class="form form-inline">Editar</a>
-                                    <form action="{{ route('brands.destroy', $processor->id) }}" method="POST">
+                                    <a href="{{ route('processors.edit', $processor->id) }}" class="btn btn-warning" class="form form-inline">Editar</a>
+                                    <form action="{{ route('processors.destroy', $processor->id) }}" method="POST">
                                         @method('DELETE')
                                         @csrf
 

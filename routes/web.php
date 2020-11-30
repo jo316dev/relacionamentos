@@ -33,6 +33,11 @@ Route::prefix('admin')
      */
 
     Route::get('processors', 'ProcessorController@index')->name('processors.index');
+    Route::get('processors/create', 'ProcessorController@create')->name('processors.create');
+    Route::post('processors/store', 'ProcessorController@store')->name('processors.store');
+    Route::get('processors/edit/{id}', 'ProcessorController@edit')->name('processors.edit');
+    Route::put('processors/{id}', 'ProcessorController@update')->name('processors.update');
+    Route::delete('processors/{id}', 'ProcessorController@destroy')->name('processors.destroy');
     
 
 
