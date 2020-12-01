@@ -246,15 +246,26 @@ return [
             // 'url'  => 'admin/brands',
             'submenu' => [
                 [
+                   
+                    
                     'text' => 'Hardware',
                     'submenu' => [
                         [
                             'text' => 'Processador',
                             'url' => 'admin/processors'
+                        ],
+                        [
+                            'text' => 'Memoria',
+                            'url' => 'admin/memory'
                         ]
                     ]
 
                 ],
+                [
+                    'text' => 'Marcas',
+                    'url' => 'admin/brands'
+                ],
+               
              
             ]
             

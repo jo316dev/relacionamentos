@@ -39,7 +39,16 @@ Route::prefix('admin')
     Route::put('processors/{id}', 'ProcessorController@update')->name('processors.update');
     Route::delete('processors/{id}', 'ProcessorController@destroy')->name('processors.destroy');
     
+    /**
+     * Rota para Cadastro de Quantidade de Memoria
+     */
 
+    Route::get('memory', 'MemoryController@index')->name('memory.index');
+    Route::get('memory/create', 'MemoryController@create')->name('memory.create');
+    Route::post('memory/store', 'MemoryController@store')->name('memory.store');
+    Route::get('memory/edit/{id}', 'MemoryController@edit')->name('memory.edit');
+    Route::put('memory/{id}', 'MemoryController@update')->name('memory.update');
+    Route::delete('memory/{id}', 'MemoryController@destroy')->name('memory.destroy');
 
 
 });
