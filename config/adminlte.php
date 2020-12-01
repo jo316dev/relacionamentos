@@ -257,6 +257,10 @@ return [
                         [
                             'text' => 'Memoria',
                             'url' => 'admin/memory'
+                        ],
+                        [
+                            'text' => 'Hard Disk',
+                            'url' => 'admin/disk'
                         ]
                     ]
 

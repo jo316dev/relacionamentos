@@ -50,6 +50,18 @@ Route::prefix('admin')
     Route::put('memory/{id}', 'MemoryController@update')->name('memory.update');
     Route::delete('memory/{id}', 'MemoryController@destroy')->name('memory.destroy');
 
+    /**
+     * Rota para Cadastro de Hard Disk
+     */
+
+
+    Route::get('disk', 'HardDiskController@index')->name('disk.index');
+    Route::get('disk/create', 'HardDiskController@create')->name('disk.create');
+    Route::post('disk/store', 'HardDiskController@store')->name('disk.store');
+    Route::get('disk/edit/{id}', 'HardDiskController@edit')->name('disk.edit');
+    Route::put('disk/{id}', 'HardDiskController@update')->name('disk.update');
+    Route::delete('disk/{id}', 'HardDiskController@destroy')->name('disk.destroy');
+
 
 });
 
