@@ -62,6 +62,11 @@ Route::prefix('admin')
     Route::put('disk/{id}', 'HardDiskController@update')->name('disk.update');
     Route::delete('disk/{id}', 'HardDiskController@destroy')->name('disk.destroy');
 
+    /**
+     * Rota para controler de setores. Esses serão adicionados aos usuários
+     */
+
+    Route::resource('sectors', 'SectorController');
 
 });
 

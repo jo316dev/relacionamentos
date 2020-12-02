@@ -269,6 +269,10 @@ return [
                     'text' => 'Marcas',
                     'url' => 'admin/brands'
                 ],
+                [
+                    'text' => 'Setores',
+                    'url' => 'admin/sectors',
+                ]
                
              
             ]
